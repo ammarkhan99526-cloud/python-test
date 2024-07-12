@@ -1,2 +1,3 @@
 #!/bin/bash
-sudo systemctl restart myapp.service
+sudo systemctl restart python-test.service  # Restart your application service
+
