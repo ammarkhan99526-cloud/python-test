@@ -6,9 +6,9 @@ files:
 file_exists_behavior: OVERWRITE
 hooks:
   BeforeInstall:
-    - location: scripts/install-dependencies.sh  # Adjusted location for installation script
+    - location: /install-dependencies.sh  # Adjusted location for installation script
       runas: root  # Ensure proper permissions for root if necessary
   AfterInstall:
-    - location: scripts/after-install.sh  # Adjusted location for after-installation script
+    - location: /after-install.sh  # Adjusted location for after-installation script
       runas: root  # Ensure proper permissions for root if necessary
 
