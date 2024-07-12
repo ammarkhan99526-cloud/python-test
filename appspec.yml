@@ -2,12 +2,13 @@ version: 0.0
 os: linux
 files:
   - source: /
-    destination: /home/ec2-user/python-test
+    destination: /home/ubuntu/python-test  # Adjusted destination path for Ubuntu
 file_exists_behavior: OVERWRITE
 hooks:
   BeforeInstall:
-    - location: /install-dependencies
-      runas: root
+    - location: scripts/install-dependencies.sh  # Adjusted location for installation script
+      runas: root  # Ensure proper permissions for root if necessary
   AfterInstall:
-    - location: /after-install
-      runas: root
+    - location: scripts/after-install.sh  # Adjusted location for after-installation script
+      runas: root  # Ensure proper permissions for root if necessary
+
