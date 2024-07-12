@@ -1,4 +1,10 @@
 #!/bin/bash
-sudo systemctl stop myapp.service
-sudo yum install -y python3-pip
-pip3 install -r /home/ec2-user/python-test/requirements.txt
+sudo systemctl stop python-test.service  # Stop your application service (adjust `python-test.service` to your actual service name)
+
+# Update package lists and install Python 3 and pip
+sudo apt-get update
+sudo apt-get install -y python3-pip
+
+# Install Python dependencies using pip
+pip3 install -r /home/ubuntu/python-test/requirements.txt  # Adjust path to match Ubuntu's user directory
+
