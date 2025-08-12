@@ -3,7 +3,7 @@ name: Deploy Python App to EC2
 on:
   push:
     branches:
-      - main  # Deploys when code is pushed to main
+      - main
 
 jobs:
   deploy:
@@ -22,7 +22,7 @@ jobs:
 
     - name: Deploy to EC2
       run: |
-        ssh ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} << 'EOF'
+        ssh -o StrictHostKeyChecking=no ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} << 'EOF'
         cd /var/www/python-app
         git reset --hard
         git pull origin main
